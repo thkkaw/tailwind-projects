@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Form with state modifiers</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body>
+    <div class="container mx-auto px-96 py-5">
+      <h1 class="text-3xl font-bold text-indigo-600 mb-3">
+        Tailwind CSS Form with state modifiers
+      </h1>
+
+      <h3 class="font-semibold py-2">
+        Form 1 - Styling based on itself and sibling
+      </h3>
+      <form action="" class="border border-gray-300 w-full rounded-md p-3">
+        <label class="block mb-2">
+          <p class="pb-2">Name</p>
+          <input
+            type="text"
+            required
+            placeholder="Enter your name"
+            class="peer border border-gray-300 w-full rounded-md p-2 focus:outline-none focus:border-pink-500 focus:valid:border-indigo-500 required:border-amber-500 placeholder-shown:bg-amber-300"
+          />
+          <small
+            class="text-red-500 hidden peer-focus:block peer-focus:peer-valid:hidden"
+            >The name field is required.</small
+          >
+        </label>
+        <label class="block mb-2">
+          <p class="pb-2">Email</p>
+          <input
+            type="email"
+            required
+            class="peer border border-gray-300 w-full rounded-md p-2 focus:outline-none focus:border-pink-500 focus:valid:border-indigo-500"
+          />
+          <small
+            class="text-red-500 hidden peer-focus:block peer-focus:peer-valid:hidden"
+            >Valid email is required.</small
+          >
+        </label>
+      </form>
+
+      <h3 class="font-semibold py-2 mt-5">
+        Form 2 - Styling based on parent and child focus
+      </h3>
+      <form
+        action=""
+        class="group border border-gray-300 w-full rounded-md p-3 focus-within:border-green-600"
+      >
+        <label class="block mb-2">
+          <p class="pb-2">Name</p>
+          <input
+            type="text"
+            required
+            placeholder="Please enter your name"
+            class="peer border border-gray-300 w-full rounded-md p-2 focus:outline-none focus:border-pink-500 focus:valid:border-indigo-500 placeholder:invisible group-hover:placeholder:visible"
+          />
+        </label>
+      </form>
+
+      <h3 class="font-semibold py-2 mt-5">
+        Form 3 - Styling based on disabled attribute
+      </h3>
+      <form
+        action=""
+        class="border border-gray-300 w-full rounded-md p-3 focus-within:border-green-600"
+      >
+        <label class="block mb-2">
+          <p class="pb-2">Name</p>
+          <input
+            type="text"
+            required
+            disabled
+            placeholder="This field cannot be filled."
+            class="peer border border-gray-300 w-full rounded-md p-2 focus:outline-none disabled:bg-pink-200 disabled:text-red-600 enabled:bg-green-400"
+          />
+        </label>
+      </form>
+
+      <h3 class="font-semibold py-2 mt-5">
+        Form 4 - Styling based on in-range and out-of-range
+      </h3>
+      <form action="" class="border border-gray-300 w-full rounded-md p-3">
+        <label class="block mb-2">
+          <p class="pb-2">Name</p>
+          <input
+            type="number"
+            required
+            min="18"
+            max="35"
+            class="peer border border-gray-300 w-full rounded-md p-2 focus:outline-none in-range:text-green-500 out-of-range:text-red-500"
+          />
+          <small
+            class="text-red-500 hidden peer-focus:block peer-focus:peer-valid:hidden"
+            >Enter valid age.</small
+          >
+        </label>
+      </form>
+
+      <h3 class="font-semibold py-2 mt-5">
+        Form 5 - Styling file input button
+      </h3>
+      <form action="" class="border border-gray-300 w-full rounded-md p-3">
+        <label class="block mb-2">
+          <p class="pb-2">Choose file</p>
+          <input
+            type="file"
+            required
+            class="file:border-none file:bg-indigo-500 file:p-2 file:rounded-full"
+          />
+        </label>
+      </form>
+
+      <h3 class="font-semibold py-2 mt-5">
+        Form 6 - Styling based on descendents
+      </h3>
+      <form action="" class="flex border border-gray-300 w-full rounded-md p-5">
+        <label
+          class="border mx-2 p-3 border-slate-300 w-32 rounded-md flex justify-between has-checked:border-2 has-checked:border-indigo-400 has-checked:bg-indigo-300 has-checked:accent-pink-500"
+        >
+          <p class="pb-2">Kpay</p>
+          <input type="radio" required name="payment" class="w-5" />
+        </label>
+        <label
+          class="border mx-2 p-3 border-slate-300 w-32 rounded-md flex justify-between has-checked:border-2 has-checked:border-indigo-400 has-checked:bg-indigo-300 has-checked:accent-pink-500"
+        >
+          <p class="pb-2">Wavepay</p>
+          <input type="radio" required name="payment" class="w-5" />
+        </label>
+        <label
+          class="border mx-2 p-3 border-slate-300 w-32 rounded-md flex justify-between has-checked:border-2 has-checked:border-indigo-400 has-checked:bg-indigo-300 has-checked:accent-pink-500"
+        >
+          <p class="pb-2">AYApay</p>
+          <input type="radio" required name="payment" class="w-5" />
+        </label>
+      </form>
+
+      <h3 class="font-semibold py-2 mt-5">
+        Form 6 - Styling based on descendents
+      </h3>
+      <div class="mt-2">
+        <button
+          class="px-8 py-2 rounded-lg bg-amber-500 text-white hover:bg-red-500 active:outline active:outline-amber-300 active:ring-0 focus:ring focus:ring-blue-500"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
